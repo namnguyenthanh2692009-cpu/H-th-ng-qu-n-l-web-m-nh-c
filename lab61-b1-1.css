@@ -1,0 +1,143 @@
+.menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    font-size: 30px;
+    cursor: pointer;
+    background: #eee;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.nav_link {
+    min-height: 8hv;
+    background-color: #e5e5e5;
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    display: none;
+    z-index: 999;
+}
+
+.nav_link ul {
+    list-style: none;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 80px; /* Đẩy nội dung xuống để không bị nút bấm che mất */
+}
+
+.nav_link li a {
+    display: block; 
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: grey;
+    padding: 10px 20px;
+}
+
+/*nội dung + background*/
+.wrapper {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: absolute;
+    
+    min-height: 550px;
+    width: 100%;
+    background-image: url(../images/h24.png);
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;     /* Canh giữa chữ */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header h3 {
+    font-family: "Grand Hotel", cursive;
+    color: #698f3f;
+    font-size: 1rem;
+}
+
+.header h1 {
+    font-family: "catamaran", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 4rem;
+}
+
+.btn {
+    display: inline-block; /* để ăn width, height */
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 12px 24px;
+    background-color: #698f3f;
+}
+
+/* --- TRẠNG THÁI MẶC ĐỊNH (CHƯA CHECK) --- */
+
+/* Ẩn checkbox đi */
+#menu-toggle {
+    display: none;
+}
+
+/* Mặc định ẩn menu */
+.nav_link {
+    display: none;
+}
+
+/* Mặc định hiện icon mở, ẩn icon đóng */
+.icon-open {
+    display: inline-block;
+}
+
+.icon-close {
+    display: none;
+}
+
+/* Hiển thị menu khi check */
+#menu-toggle:checked ~ .nav_link {
+    display: block;
+}
+
+/* Ẩn/hiện icon */
+#menu-toggle:checked ~ div .icon-open {
+    display: none;
+}
+#menu-toggle:checked ~ div .icon-close {
+    display: inline-block;
+}
+
+.nav_link li a:link, 
+.nav_link li a:visited {
+    transition: all 0.3s linear;
+}
+
+.nav_link li a:hover {   
+    color: #698f3f;
+    transform: translateX(10%);
+}
+
+.nav_link li a:active {
+    transform: translateX(10%);
+    transform: scale(0.95);
+}
